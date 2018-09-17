@@ -15,7 +15,7 @@ Data = textread('FileName.atf');
 eegData = Data - mean(Data);
 % Filter the theta and gamma
 eegTheta = filtfilt(b,a,eegData);
-eegGamma = filtfilt(b,a,eegData);
+eegGamma = filtfilt(e,f,eegData);
 % Calculate the phase of theta from Hilbert transform of the signal
 eegThetaPhase = angle(hilbert(eegTheta));
 % Calculate the amplitude of the gamma and filter it in the theta frequency range
